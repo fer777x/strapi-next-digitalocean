@@ -1,0 +1,31 @@
+{
+  "name": "strapi-next",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.12.6",
+    "@strapi/plugin-users-permissions": "4.12.6",
+    "@strapi/strapi": "4.12.6",
+    "better-sqlite3": "8.5.0",
+    "pg": "^8.11.3"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "d2c01d03-7bd0-4e7f-a72a-cac9d1e4e1b7"
+  },
+  "engines": {
+    "node": ">=16.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
