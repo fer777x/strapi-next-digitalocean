@@ -1,4 +1,9 @@
 {
+  // cambio agregado recientemente
+  "compilerOptions": {
+    "outDir": "build",
+  },
+  
   "extends": "@strapi/typescript-utils/tsconfigs/admin",
   "include": [
     "../plugins/**/admin/src/**/*",
@@ -9,5 +14,7 @@
     "build/",
     "dist/",
     "**/*.test.ts"
-  ]
+  ],
+
+
 }
