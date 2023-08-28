@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "puestos",
+  "info": {
+    "singularName": "puesto",
+    "pluralName": "puestos",
+    "displayName": "puesto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "puesto": {
+      "type": "string"
+    }
+  }
+}

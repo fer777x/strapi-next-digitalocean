@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "distritos",
+  "info": {
+    "singularName": "distrito",
+    "pluralName": "distritos",
+    "displayName": "distrito"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombredistrito": {
+      "type": "string"
+    }
+  }
+}

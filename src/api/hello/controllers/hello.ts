@@ -1,0 +1,643 @@
+/**
+ * A set of functions called "actions" for `hello`
+ */
+
+// export default {
+//   exampleAction: async (ctx, next) => {
+//     try {
+//       ctx.body = 'ok';
+//     } catch (err) {
+//       ctx.body = err;
+//     }
+//   }
+// };
+
+'use strict';
+
+module.exports = {
+  async index(ctx, next) {
+    //señal de prueba
+    // try {
+    //   ctx.body = 'ok';
+    // } catch (err) {
+    //   ctx.body = err;
+    // }
+
+    //bulk insert
+    const entrie = await strapi.db.query("api::empleado.empleado").createMany({
+      data: [
+        {
+          nombre: "David Ysaías",
+          apellido: "DÁVILA Ballena",
+          fechanac: "10/09/1987",
+          fechaingreso: "17/06/2013",
+          dni: "44660048",
+          telefono1: "956 297 120",
+          telefono2: "955 037 463",
+          fechaemo: "10/11/2021",
+          correo: "ddavila@idetec.pe",
+          correopersonal: "ddavilaballena@gmail.com",
+          direccion: "Victor Alzamora N° 510, Mz. E, Lt 115 Dpto 402, Urb. El Barrio Médico, Surquillo."
+        },
+        {
+          nombre: "Diana Paola",
+          apellido: "Espejo Cerna",
+          fechanac: "26/10/1987",
+          fechaingreso: "02/05/2013",
+          dni: "44937215",
+          telefono1: "995 025 973",
+          telefono2: "",
+          fechaemo: "29/08/2018",
+          correo: "",
+          correopersonal: "",
+          direccion: "Calle las Uvas manu 2 Dpto. 504 Surco"
+        },
+        {
+          nombre: "Leoncio",
+          apellido: "HINOJOSA Apaza",
+          fechanac: "14/09/1957",
+          fechaingreso: "04/01/2008",
+          dni: "08804336",
+          telefono1: "998 173 520",
+          telefono2: "998 173 520",
+          fechaemo: "10/11/2021",
+          correo: "lhinojosa@idetec.pe",
+          correopersonal: "hinojosa.leo@gmail.com",
+          direccion: "Jr. Combate de Angamos 123 Santiago de Surco"
+        },
+        {
+          nombre: "José Luis Fernando",
+          apellido: "Hinojosa Alatrista",
+          fechanac: "28/08/1987",
+          fechaingreso: "04/01/2008",
+          dni: "44719529",
+          telefono1: "999600424",
+          telefono2: "",
+          fechaemo: "29/08/2018",
+          correo: "admin@idetec.pe",
+          correopersonal: "",
+          direccion: "Jr. Combate de Angamos 123 Santiago de Surco"
+        },
+        {
+          nombre: "Jannett Isabel",
+          apellido: "ALCÁNTARA Sánchez",
+          fechanac: "29/04/1979",
+          fechaingreso: "02/05/2013",
+          dni: "40145323",
+          telefono1: "998 336 313",
+          telefono2: "969 188 880",
+          fechaemo: "28/09/2019",
+          correo: "jalcantara@demem.com.pe",
+          correopersonal: "",
+          direccion: "Calle Alfa Mz J Lt 14 Urb Las Fresas, Callao."
+        },
+        {
+          nombre: "Carolina del Rosario",
+          apellido: "Ramos Soto",
+          fechanac: "05/05/1991",
+          fechaingreso: "05/09/2013",
+          dni: "47005727",
+          telefono1: "247 4062",
+          telefono2: "996 520 516",
+          fechaemo: "18/08/2020",
+          correo: "contabilidad@idetec.pe",
+          correopersonal: "rosramos2013@gmail.com",
+          direccion: "Prl. Arica Psj Huarangal 302 Lt 16 Santiago de Surco"
+        },
+        {
+          nombre: "Olenka Mariana",
+          apellido: "MENDOZA Rivadeneira",
+          fechanac: "07/11/1998",
+          fechaingreso: "13/06/2017",
+          dni: "71878968",
+          telefono1: "924 049 481",
+          telefono2: "",
+          fechaemo: "07/12/2021",
+          correo: "logistica@idetec.pe",
+          correopersonal: "Marianamr0711@gmail.com",
+          direccion: "Barreto N° 431, La Victoria."
+        },
+        {
+          nombre: "Sandra Patricia",
+          apellido: "CARLOS Neyra",
+          fechanac: "06/08/1991",
+          fechaingreso: "10/07/2019",
+          dni: "70058330",
+          telefono1: "940 246 954",
+          telefono2: "",
+          fechaemo: "14/08/2020",
+          correo: "scarlos@idetec.pe",
+          correopersonal: "arq.sandracarlos@gmail.com",
+          direccion: "Calle Los Himalayas 269 Asoc. Viv. Los Huertos de La Molina MZ. K LT.3, La Molina."
+        },
+        {
+          nombre: "Julio Cesar",
+          apellido: "MAURICIO Velez",
+          fechanac: "01/06/1982",
+          fechaingreso: "16/11/2021",
+          dni: "41202960",
+          telefono1: "947 240 776",
+          telefono2: "",
+          fechaemo: "09/11/2021",
+          correo: "",
+          correopersonal: "jcmauriciov@gmail.com",
+          direccion: "Calle Urb. Popular B Mz B Lt 25, Pariñas, Talara – Piura."
+        },
+        {
+          nombre: "Javier",
+          apellido: "NOBLECILLA Espinoza",
+          fechanac: "20/11/1968",
+          fechaingreso: "16/11/2021",
+          dni: "03853196",
+          telefono1: "942 104 954",
+          telefono2: "",
+          fechaemo: "09/11/2021",
+          correo: "",
+          correopersonal: "javiernoblecillae@gmail.com",
+          direccion: "Calle Barrio Volante 1321-2, El Alto, Talara, Piura."
+        },
+        {
+          nombre: "Silvana Lorena",
+          apellido: "MUCHAYPIÑA Suárez",
+          fechanac: "22/03/1990",
+          fechaingreso: "01/12/2021",
+          dni: "46433239",
+          telefono1: "955 426 626",
+          telefono2: "",
+          fechaemo: "09/11/2021",
+          correo: "",
+          correopersonal: "silvanalorenams@gmail.com",
+          direccion: "Calle Bolivia 303, San Andrés, Pisco, Ica."
+        },
+        {
+          nombre: "Javier",
+          apellido: "NOLE Chira",
+          fechanac: "22/07/1967",
+          fechaingreso: "13/12/2021",
+          dni: "03861042",
+          telefono1: "950 851 584",
+          telefono2: "",
+          fechaemo: "13/11/2021",
+          correo: "",
+          correopersonal: "javier.nole@gmail.com",
+          direccion: "Calle Libertad N° 430, Negritos, La Brea, Talara, Piura."
+        },
+        {
+          nombre: "Richard Ronald",
+          apellido: "PALACIOS Lizama",
+          fechanac: "24/01/1982",
+          fechaingreso: "24/01/2022",
+          dni: "41296381",
+          telefono1: "921 133 027",
+          telefono2: "",
+          fechaemo: "11/01/2022",
+          correo: "",
+          correopersonal: "richardronald34@gmail.com",
+          direccion: "Mz. H. Módulo L. Dpto. 103, Urb. Vista Hermosa, Departamento La Libertad, Provincia Trujillo, Distrito Trujillo."
+        },
+        {
+          nombre: "Leoncio Armando",
+          apellido: "CRUZ Guevara",
+          fechanac: "16/02/1992",
+          fechaingreso: "04/03/2022",
+          dni: "70504643",
+          telefono1: "934 844 580",
+          telefono2: "",
+          fechaemo: "25/02/2022",
+          correo: "",
+          correopersonal: "leonciocruz16@gmail.com",
+          direccion: "Parque 35-25, Departamento Piura, Provincia Talara, Distrito Pariñas."
+        },
+        {
+          nombre: "Diego Francisco",
+          apellido: "SOCOLA Ramos",
+          fechanac: "24/01/1983",
+          fechaingreso: "01/07/2022",
+          dni: "41879865",
+          telefono1: "943 901 865",
+          telefono2: "",
+          fechaemo: "24/06/2022",
+          correo: "",
+          correopersonal: "dfsocolar@gmail.com",
+          direccion: "Asent. H. La Primavera MZ G1 LT 5. I Etapa, Departamento y Provincia Piura, Distrito Castilla."
+        },
+        {
+          nombre: "José Antonio",
+          apellido: "PANTA Bayona",
+          fechanac: "19/03/1979",
+          fechaingreso: "02/01/2023",
+          dni: "40446198",
+          telefono1: "946 599 381",
+          telefono2: "",
+          fechaemo: "03/08/2022",
+          correo: "",
+          correopersonal: "josepantab@gmail.com",
+          direccion: "Urb. Ignacio Merino Etapa I Mz. H1 LT. 39, Departamento y Provincia de Piura, Distrito Piura."
+        },
+        {
+          nombre: "Jairo",
+          apellido: "TORO Rodríguez",
+          fechanac: "28/10/1977",
+          fechaingreso: "16/01/2023",
+          dni: "001679223",
+          telefono1: "912 936 583",
+          telefono2: "",
+          fechaemo: "27/12/2022",
+          correo: "jtoro@idetec.pe",
+          correopersonal: "jairo.toro@outlook.com",
+          direccion: "Ca. Felipe Sassone N° 181, Dpto. 509, Barranco, Lima"
+        },
+        {
+          nombre: "Leonel Alexander",
+          apellido: "HINOJOSA Palomino",
+          fechanac: "19/01/1997",
+          fechaingreso: "12/01/2023",
+          dni: "78019654",
+          telefono1: "",
+          telefono2: "",
+          fechaemo: "06/10/2022",
+          correo: "ahinojosa@idetec.pe",
+          correopersonal: "",
+          direccion: "Jr. Combate de Angamos N° 123, Santiago de Surco, Lima"
+        },
+        {
+          nombre: "Walther Carlos",
+          apellido: "PALMA Serrano",
+          fechanac: "20/09/1983",
+          fechaingreso: "07/09/2018",
+          dni: "42015516",
+          telefono1: "993 391 374",
+          telefono2: "",
+          fechaemo: "",
+          correo: "drwcps@gmail.com",
+          correopersonal: "Calle Nelson Guía 425B, Dpto. 104  Urb. Dinastía I - Surco"
+        },
+        {
+          nombre: "Hugo Alfonso Augusto",
+          apellido: "VILLAFUERTE Ramírez de Piérola",
+          fechanac: "07/10/1959",
+          fechaingreso: "",
+          dni: "08808829",
+          telefono1: "3724952",
+          telefono2: "999 300 450",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "hugovillafuerte2001@gmail.com",
+          direccion: "Av. Caminos del Inca 573, Santiago de Surco"
+        },
+        {
+          nombre: "Lourdes",
+          apellido: "Ruiz Huamaní",
+          fechanac: "11/03/1979",
+          fechaingreso: "",
+          dni: "40123632",
+          telefono1: "939 278 207",
+          telefono2: "268 1596",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "proyectoecociudad.lr@gmail.com",
+          direccion: "Av. Monte de los Olivos 875 Santiago de Surco"
+        },
+        {
+          nombre: "Víctor Raúl",
+          apellido: "CHUQUILLANQUI Quispe",
+          fechanac: "22/02/1952",
+          fechaingreso: "",
+          dni: "08761659",
+          telefono1: "936 335 321",
+          telefono2: "477 6879",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "vchuquillanqui@estudiocontasur.com",
+          direccion: "Av. San Juan 404, Santiago de Surco"
+        },
+        {
+          nombre: "Luis Benny",
+          apellido: "PARIAN Orihuela",
+          fechanac: "07/01/1987",
+          fechaingreso: "26/04/2021",
+          dni: "44000499",
+          telefono1: "935 387 738",
+          telefono2: "",
+          fechaemo: "",
+          correo: "luisparian@gmail.com",
+          correopersonal: "Jr. Ejidio Valentín # 605, dpto. 203, La Victoria."
+        },
+        {
+          nombre: "Luis Elver",
+          apellido: "ACUÑA GARCIA",
+          fechanac: "05/03/1966",
+          fechaingreso: "",
+          dni: "07369171",
+          telefono1: "943 876 101",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "luisacuna66@yahoo.es",
+          direccion: "Alameda del Corregidor 3063, Dpto. 101, Urb. La Portada del Sol, Mz. D, Lt. 6, La Molina."
+        },
+        {
+          nombre: "Jhonatan Esaul",
+          apellido: "PASACHE Carrasco",
+          fechanac: "16/11/1999",
+          fechaingreso: "02/01/2020",
+          dni: "75927903",
+          telefono1: "950506105",
+          telefono2: "921971386",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "jhonatanp5103@gmail.com",
+          direccion: "AA.HH. 2 de Mayo A-17, Talara Alta"
+        },
+        {
+          nombre: "Oswaldo Segundo",
+          apellido: "OLIVARES Cifre",
+          fechanac: "06/08/1984",
+          fechaingreso: "01/02/2020",
+          dni: "42607706",
+          telefono1: "938000513",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "oolivares12@gmail.com",
+          direccion: "Urb. Los Rosales Mz. G, Lt 34 - SMP"
+        },
+        {
+          nombre: "Rossanna Alejandra",
+          apellido: "GARCÉS Encalada",
+          fechanac: "10/03/1996",
+          fechaingreso: "01/03/2019",
+          dni: "72205460",
+          telefono1: "910073886",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "marenza_1@hotmail.com",
+          direccion: "Urb. Aproviser L-25 Pariñas - Talara"
+        },
+        {
+          nombre: "Junior Israel",
+          apellido: "ECHE Vilela",
+          fechanac: "11/04/2000",
+          fechaingreso: "07/02/2019",
+          dni: "74775680",
+          telefono1: "928024881",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "j.eche123@gmail.com",
+          direccion: "Calle Lima N° 353 La Brea - Talara"
+        },
+        {
+          nombre: "Walther Fabrizio",
+          apellido: "PÉREZ González",
+          fechanac: "31/03/1979",
+          fechaingreso: "01/03/2020",
+          dni: "80122728",
+          telefono1: "951 724 986",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "wfperezg@hotmail.com",
+          direccion: "Av. Bolivar N° 1095  Dpto. 1502 Torre A, distrito de Pueblo Libre"
+        },
+        {
+          nombre: "Milton César",
+          apellido: "ACEDO Sosa",
+          fechanac: "01/09/1983",
+          fechaingreso: "08/02/2019",
+          dni: "42043301",
+          telefono1: "970 746 727",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "milton.acedo@gmail.com",
+          direccion: "Vista Alegre I-04 Pariñas - Talara"
+        },
+        {
+          nombre: "Mariner Galiana",
+          apellido: "VITE Rivas",
+          fechanac: "11/08/1992",
+          fechaingreso: "01/02/2020",
+          dni: "47262923",
+          telefono1: "931 596 128",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "mgaliana.vr@gmail.com",
+          direccion: "Calle Cuzco 161- Ate - Lima"
+        },
+        {
+          nombre: "Luis Benny",
+          apellido: "PARIAN Orihuela",
+          fechanac: "07/01/1987",
+          fechaingreso: "01/03/2020",
+          dni: "44000499",
+          telefono1: "935 387 738",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "luisparian@gmail.com",
+          direccion: "Calle Yen Escobedo N° 570 Urb. Las Viñas, San Luis"
+        },
+        {
+          nombre: "Medalit Miriam",
+          apellido: "VILLAORDUÑA Trujillo",
+          fechanac: "25/03/1995",
+          fechaingreso: "03/01/2020",
+          dni: "72895952",
+          telefono1: "982 344 728",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "medalitmvt@hotmail.com",
+          direccion: "Calle Manuel C De La Torre 838 Urb. Los Robles – Santa Anita"
+        },
+        {
+          nombre: "Adrián Omar",
+          apellido: "ORTIZ Ortiz",
+          fechanac: "27/06/1996",
+          fechaingreso: "01/05/2020",
+          dni: "74847949",
+          telefono1: "930 222 550",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "adrian27.06.96@gmail.com",
+          direccion: "Mz P5 Lote 1 Calle 7 Urb. Pro – Los Olivos"
+        },
+        {
+          nombre: "José Luis",
+          apellido: "Ascencio Navarro",
+          fechanac: "07/11/1982",
+          fechaingreso: "01/12/2020",
+          dni: "41619493",
+          telefono1: "993 102 504",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "jose_ascencio_7@hotmail.com",
+          direccion: "Los claveles de gloria Mz. A, Lt-9, Gloria Baja, Distrito Ate."
+        },
+        {
+          nombre: "Edith Giovanna",
+          apellido: "Mamani Conto",
+          fechanac: "19/09/1982",
+          fechaingreso: "20/03/2021",
+          dni: "41548876",
+          telefono1: "997 749 923",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "edith.mamani@cip.org.pe",
+          direccion: "Av. J.C. Mariategui N° 1973, Villa María del Triunfo."
+        },
+        {
+          nombre: "Iván Enrique",
+          apellido: "GUTIÉRREZ Vásquez",
+          fechanac: "01/06/1972",
+          fechaingreso: "25/05/2021",
+          dni: "09923546",
+          telefono1: "959 708 886",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "igutierrez36@gmail.com",
+          direccion: "Jr. Santa Mariana de Paredes N° 160, Urb. Pando, 3ra Etapa, Distrito Lima."
+        },
+        {
+          nombre: "Fernando Javier",
+          apellido: "ESPINOZA Alvarado",
+          fechanac: "11/01/1971",
+          fechaingreso: "20/07/2020",
+          dni: "09572933",
+          telefono1: "966 810 985",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "supervision@idetec.pe",
+          direccion: "fer_sp_al_10@hotmail.com"
+        },
+        {
+          nombre: "Karol Shachenca",
+          apellido: "SILVA Huamanquispe",
+          fechanac: "30/09/1982",
+          fechaingreso: "31/07/2021",
+          dni: "43214286",
+          telefono1: "967 737 976",
+          telefono2: "946 555 944",
+          fechaemo: "",
+          correo: "supervision@idetec.pe",
+          correopersonal: "karolsilva3009@gmail.com",
+          direccion: "Jr. Juno Dpto. 309-B Urb. La Campiña Mz. B. Lt. 8, Chorrillos."
+        },
+        {
+          nombre: "Félix Julio",
+          apellido: "CALLE Palomino",
+          fechanac: "29/07/1961",
+          fechaingreso: "03/06/2021",
+          dni: "08570879",
+          telefono1: "975 595 590",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "felix.calle.epc2@gmail.com",
+          direccion: "Mz “D” Lote 8A  13 de Octubre, San Juan de Miraflores."
+        },
+        {
+          nombre: "Jorge Antonio",
+          apellido: "JIMENEZ Gusukuma",
+          fechanac: "02/02/1990",
+          fechaingreso: "01/02/2021",
+          dni: "46161045",
+          telefono1: "928 474 740",
+          telefono2: "",
+          fechaemo: "",
+          correo: "",
+          correopersonal: "jjimenezgusukuma@gmail.com",
+          direccion: "Jr. Vizcardo y Guzmán 175, Urb. San Agustín, Comas"
+        },
+        {
+          nombre: "Edison William",
+          apellido: "VASQUEZ Huillca",
+          fechanac: "23/08/1979",
+          fechaingreso: "08/11/2021",
+          dni: "40989447",
+          telefono1: "977 502 901",
+          telefono2: "",
+          fechaemo: "14/03/2022",
+          correo: "",
+          correopersonal: "ewilliam2308@hotmail.com",
+          direccion: "Calle Ricardo Palma N° 831, Cercado Puente Piedra."
+        },
+        {
+          nombre: "Marlon Iván",
+          apellido: "RIOFRIO López",
+          fechanac: "08/11/1971",
+          fechaingreso: "08/03/2022",
+          dni: "02822379",
+          telefono1: "997 095 417",
+          telefono2: "",
+          fechaemo: "11/02/2022",
+          correo: "",
+          correopersonal: "marlonriofrio08111971@gmail.com",
+          direccion: "Calle Javier Heraud N° 639, Urb. Palermo, La Libertad, Trujillo, Trujillo."
+        },
+        {
+          nombre: "Jorge Ericson",
+          apellido: "RAMÍREZ Sullón",
+          fechanac: "16/11/1983",
+          fechaingreso: "10/08/2022",
+          dni: "42170733",
+          telefono1: "944 824 127",
+          telefono2: "",
+          fechaemo: "03/08/2022",
+          correo: "",
+          correopersonal: "jorgeericson.ramirezsullon@gmail.com",
+          direccion: "Parque 23-20, Departamento Piura, Provincia Talara, Distrito Pariñas."
+        },
+        {
+          nombre: "José Antonio",
+          apellido: "PANTA Bayona",
+          fechanac: "19/03/1979",
+          fechaingreso: "10/08/2022",
+          dni: "40446198",
+          telefono1: "946 599 381",
+          telefono2: "",
+          fechaemo: "03/08/2022",
+          correo: "j_panta_b@hotmail.com",
+          correopersonal: "josepantab@gmail.com",
+          direccion: "Urb. Ignacio Merino Etapa I Mz. H1 LT. 39, Departamento y Provincia de Piura, Distrito Piura."
+        },
+        {
+          nombre: "Felipe Alfonso",
+          apellido: "TORRES Rios",
+          fechanac: "09/11/1965",
+          fechaingreso: "31/12/2022",
+          dni: "18838078",
+          telefono1: "998 579 862",
+          telefono2: "",
+          fechaemo: "04/05/2022",
+          correo: "ftorres@idetec.pe",
+          correopersonal: "lipe20@yahoo.com",
+          direccion: "Jr. Zorritos 1399, Block 56, Dpto 404, Distrito Lima, Departamento Lima, Provincia Lima."
+        },
+        {
+          nombre: "Yean Carlos",
+          apellido: "PEÑA Zurita",
+          fechanac: "24/02/1993",
+          fechaingreso: "31/12/2022",
+          dni: "73183942",
+          telefono1: "982 618 245",
+          telefono2: "",
+          fechaemo: "17/05/2022",
+          correo: "ycpenaz@idetec.pe",
+          correopersonal: "yean.pena@gmail.com",
+          direccion: "Psj. Los Pinos 126, Mz. D2, Lt. 7, Urb. El Ermitaño, Departamento de Lima, Provincia Lima, Distrito Independencia."
+        },
+
+      ],
+  });
+    ctx.body= entrie
+  }
+}
