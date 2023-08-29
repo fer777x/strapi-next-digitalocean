@@ -29,12 +29,6 @@
     "telefono2": {
       "type": "string"
     },
-    "correo": {
-      "type": "email"
-    },
-    "correopersonal": {
-      "type": "email"
-    },
     "direccion": {
       "type": "richtext"
     },
@@ -54,6 +48,12 @@
       "type": "string"
     },
     "fechaemo": {
+      "type": "string"
+    },
+    "correo": {
+      "type": "string"
+    },
+    "correopersonal": {
       "type": "string"
     }
   }
