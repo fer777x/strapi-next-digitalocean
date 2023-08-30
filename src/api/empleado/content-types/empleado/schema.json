@@ -55,6 +55,33 @@
     },
     "correopersonal": {
       "type": "string"
+    },
+    "ndni": {
+      "type": "string"
+    },
+    "ciudad": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ciudad.ciudad",
+      "inversedBy": "empleados"
+    },
+    "distrito": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::distrito.distrito",
+      "inversedBy": "empleados"
+    },
+    "profesion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profesion.profesion",
+      "inversedBy": "empleados"
+    },
+    "puesto": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::puesto.puesto",
+      "inversedBy": "empleados"
     }
   }
 }

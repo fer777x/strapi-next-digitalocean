@@ -13,6 +13,12 @@
   "attributes": {
     "nombredistrito": {
       "type": "string"
+    },
+    "empleados": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::empleado.empleado",
+      "mappedBy": "distrito"
     }
   }
 }

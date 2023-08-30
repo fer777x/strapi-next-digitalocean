@@ -14,6 +14,12 @@
     "nombreciudad": {
       "type": "string",
       "required": true
+    },
+    "empleados": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::empleado.empleado",
+      "mappedBy": "ciudad"
     }
   }
 }
